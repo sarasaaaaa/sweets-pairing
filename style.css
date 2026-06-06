@@ -234,7 +234,7 @@ body {
 
 /* Lace Decoration */
 .lace-decoration {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -271,7 +271,7 @@ body {
 /* Lace line decoration at bottom of screens */
 .screen::after {
     content: '';
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
