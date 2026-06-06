@@ -317,6 +317,29 @@ body {
     box-shadow: 0 4px 12px rgba(92, 61, 46, 0.2);
 }
 
+/* Tilt animation when clicking start button */
+.tilt-active {
+    animation: tiltClick 0.45s ease-in-out;
+}
+
+@keyframes tiltClick {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    20% {
+        transform: rotate(-8deg) scale(0.92);
+    }
+    50% {
+        transform: rotate(6deg) scale(0.95);
+    }
+    75% {
+        transform: rotate(-3deg) scale(0.98);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
 /* ================= SPEECH BUBBLE IMAGES ================= */
 /* ================= INTRO CHARACTER & BUBBLE ================= */
 .intro-character-section {

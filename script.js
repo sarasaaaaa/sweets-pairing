@@ -456,8 +456,14 @@ function displayResult(dessert) {
 
 // Start Button
 btnStart.addEventListener('click', () => {
-    resetSelections();
-    showScreen('question');
+    btnStart.classList.add('tilt-active');
+    
+    // Wait for the tilt animation to complete before showing the next screen
+    setTimeout(() => {
+        btnStart.classList.remove('tilt-active');
+        resetSelections();
+        showScreen('question');
+    }, 450);
 });
 
 // Option Selection Buttons
