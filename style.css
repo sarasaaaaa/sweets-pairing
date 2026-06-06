@@ -349,8 +349,8 @@ body {
 
 .intro-bubble-box {
     position: absolute;
-    bottom: 120px; /* 캐릭터 머리 위로 올림 */
-    left: 20px; /* 세번째 스크린샷처럼 캐릭터 위에서 약간 왼쪽으로 정렬 */
+    bottom: 175px; /* 캐릭터 머리 위로 올림 */
+    left: 15px; /* 세번째 스크린샷처럼 캐릭터 위에서 약간 왼쪽으로 정렬 */
     width: 140px; /* 가로폭 약간 조정 */
     height: auto;
     min-height: 105px;
