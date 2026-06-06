@@ -225,10 +225,10 @@ const DESSERTS = [
         origin: "서양식",
         texture: "쫀득한",
         ingredient: "견과류",
-        pairingId: 3,
+        pairingId: 2,
         emoji: "🍬",
         photo: "디저트 사진/터키쉬딜라이트.png",
-        description: "터키시 딜라이트는 전분과 설탕으로 만든 젤리 같은 쫀득함과 꽃 향을 내는데, 연한 드립 커피가 향긋한 젤리의 잔향을 씻어내기보다 은은하게 음미하도록 도와줘."
+        description: "터키시 딜라이트는 전분과 설탕으로 만든 젤리 같은 쫀득함과 꽃 향을 내는데, 깔끔한 아메리카노가 단맛을 씻어주어 한입씩 먹을 때마다 질리지 않고 즐길 수 있어."
     },
     {
         name: "과일 찹쌀떡",
@@ -432,8 +432,12 @@ function displayResult(dessert) {
         // 부드러운 티라미수로 커피가 들어간 스위츠를 먹기
         const particle = getParticle(dessert.descriptiveName, 'ro');
         actionTextElement.innerHTML = `<strong>${dessert.descriptiveName}</strong>${particle}<br>${pairing.actionText}`;
+    } else if (pairing.actionText.includes('먹')) {
+        // "먹"이 들어간 페어링이면 "먹으며"를 제외하여 중복 방지 (예: 고소한 크루아상을 아메리카노와 번갈아 먹기)
+        const particle = getParticle(dessert.descriptiveName, 'eulleul');
+        actionTextElement.innerHTML = `<strong>${dessert.descriptiveName}</strong>${particle}<br>${pairing.actionText}`;
     } else {
-        // 고소한 크루아상을 먹으며 아메리카노와 번갈아 먹기
+        // "먹"이 없으면 "먹으며"를 붙여 연결 (예: 달콤한 약과를 먹으며 에스프레소를 홀짝대기)
         const particle = getParticle(dessert.descriptiveName, 'eulleul');
         actionTextElement.innerHTML = `<strong>${dessert.descriptiveName}</strong>${particle} 먹으며<br>${pairing.actionText}`;
     }
