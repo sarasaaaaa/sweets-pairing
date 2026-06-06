@@ -341,17 +341,17 @@ body {
 .intro-character {
     position: absolute;
     bottom: 0;
-    left: 60px; /* 가로 중앙 정렬 (320px 컨테이너에서 200px 캐릭터이므로 좌측 60px) */
-    width: 200px;
+    left: 75px; /* 가로 중앙 정렬 (320px 컨테이너에서 170px 캐릭터이므로 좌측 75px) */
+    width: 170px;
     height: auto;
     z-index: 3;
 }
 
 .intro-bubble-box {
     position: absolute;
-    bottom: 175px; /* 캐릭터 머리 위로 올림 */
-    left: 15px; /* 세번째 스크린샷처럼 캐릭터 위에서 약간 왼쪽으로 정렬 */
-    width: 140px; /* 가로폭 약간 조정 */
+    bottom: 150px; /* 캐릭터가 작아진 만큼 높이 낮춰 머리 위에 안착 */
+    left: 25px; /* 캐릭터와 비례하도록 위치 미세 조정 */
+    width: 135px; /* 가로폭 복원 */
     height: auto;
     min-height: 105px;
     background-image: url('시작_말풍선.png');
