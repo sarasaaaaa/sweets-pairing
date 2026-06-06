@@ -322,44 +322,38 @@ body {
 .intro-character-section {
     position: relative;
     width: 100%;
-    height: 280px;
-    /* Increased height to fit larger character */
+    height: 32dvh;
+    min-height: 220px;
+    max-height: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 15px;
+    margin-bottom: 2dvh;
 }
 
 .intro-character {
     width: 200px;
-    /* Enlarged character width from 225px to 240px */
     height: auto;
     z-index: 3;
-    /* Character in front of bubble */
 }
 
 .intro-bubble-box {
     position: absolute;
     top: -8px;
-    /* Shifted slightly down to align with the larger head */
     left: 51%;
     transform: translateX(-130px);
-    /* Shifted further left to accommodate the 240px character */
     width: 125px;
-    /* Reduced width to match original aspect ratio */
-    height: 100px;
-    /* Proportional height matching 1.27 aspect ratio */
+    height: auto;
+    min-height: 105px;
     background-image: url('시작_말풍선.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 12px 20px 10px;
-    /* Pad text to sit nicely inside the bubble waves */
+    padding: 12px 12px 22px 10px;
     z-index: 1;
-    /* Bubble behind character */
 }
 
 .intro-bubble-text {
@@ -390,8 +384,7 @@ body {
 }
 
 .logo-container {
-    margin-top: 60px;
-    /* Increased to push logo down slightly */
+    margin-top: clamp(20px, 6dvh, 60px);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -399,9 +392,7 @@ body {
 
 .brand-logo {
     width: 95%;
-    /* Enlarged logo width */
     max-width: 390px;
-    /* Enlarged max-width from 300px */
     height: auto;
     object-fit: contain;
 }
@@ -409,9 +400,7 @@ body {
 .start-btn {
     width: 55%;
     max-width: 200px;
-    /* Prevent overstretching */
-    margin-bottom: 80px;
-    /* Increased to push button slightly up */
+    margin-bottom: clamp(20px, 6dvh, 60px);
 }
 
 /* ================= QUESTION SCREEN ================= */
@@ -438,65 +427,54 @@ body {
 .question-character-section {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 22dvh;
+    min-height: 140px;
+    max-height: 190px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Center the inner fixed-width container */
-    margin-top: 30px;
-    margin-bottom: -5px;
-    /* Negative margin to pull the content below upwards */
+    margin-top: clamp(10px, 3dvh, 30px);
+    margin-bottom: 5px;
 }
 
 /* Fixed-width wrapper to anchor bubble and character relative positions regardless of viewport stretching */
 .question-character-inner {
     position: relative;
     width: 320px;
-    /* Locked width matching app layout */
     height: 100%;
 }
 
 .question-character {
     position: absolute;
-    top: 50px;
-    /* Slightly raised for tighter integration with speech bubble */
+    bottom: 0;
     left: 144px;
-    /* Fixed px position from left anchor */
     width: 142px;
-    /* Enlarged character width from 120px to 142px */
     height: auto;
     z-index: 3;
-    /* Character in front of bubble */
 }
 
 .question-bubble-box {
     position: absolute;
-    top: -5px;
+    bottom: 45px;
     left: 25px;
-    /* Fixed px position from left anchor */
     width: 170px;
-    /* Enlarged width from 145px to 170px */
-    height: 98px;
-    /* Proportional height matching 1.73 aspect ratio */
+    height: auto;
+    min-height: 98px;
     background-image: url('고르기_말풍선.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7px 10px 17px 15px;
-    /* Shifted text slightly up and right by tweaking padding (top/bottom, left/right) */
+    padding: 10px 10px 20px 15px;
     z-index: 1;
-    /* Bubble behind character */
 }
 
 .question-bubble-text {
     font-family: 'SUITE', sans-serif;
     font-size: 0.97rem;
-    /* Enlarged from 0.85rem */
     font-weight: 500;
-    /* Regular version font weight */
     color: #5C3D2E;
     line-height: 1.4;
     text-align: center;
@@ -507,14 +485,11 @@ body {
     flex: 1;
     width: 100%;
     max-width: 320px;
-    /* Prevent overstretching */
-    margin: -10px auto 10px auto;
-    /* Pull upward and keep bottom margin */
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 55px;
-    /* Increased from 42px to add more spacing */
+    gap: clamp(15px, 3.5dvh, 40px);
 }
 
 .step-group {
@@ -576,9 +551,7 @@ body {
 .nav-container {
     width: 100%;
     max-width: 320px;
-    /* Prevent overstretching */
-    margin: 0 auto 110px auto;
-    /* Increased further to push buttons up */
+    margin: 15px auto 10px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -626,8 +599,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    margin-top: -150px;
-    /* Shift content 40px upward */
+    margin-top: -30px;
 }
 
 .loading-bubble-container {
@@ -667,15 +639,14 @@ body {
 
 /* Loading & Question screen shared bottom logo */
 .screen-bottom-logo-container {
-    position: absolute;
-    bottom: 50px;
-    /* Match fail page logo height (~47px from screen edge) */
-    left: 0;
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     pointer-events: none;
     z-index: 5;
+    margin-top: auto;
+    padding-bottom: 20px;
 }
 
 .screen-bottom-logo {
@@ -695,10 +666,8 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    /* Space out Top, Middle and Bottom */
     align-items: center;
     padding: 75px 24px 20px 24px;
-    /* Standard screen padding */
     height: 100%;
 }
 
@@ -708,7 +677,6 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    /* Pushed down from top lace line */
     margin-bottom: 0px;
 }
 
@@ -720,12 +688,10 @@ body {
             #FFEFA6 30px);
     border: none;
     border-radius: 9999px;
-    /* Capsule */
     padding: 8px 24px;
     display: inline-flex;
     gap: 8px;
     font-weight: 600;
-    /* Regular/Bold balance */
     color: #5C3D2E;
     font-size: 0.95rem;
     box-shadow: 0 4px 10px rgba(92, 61, 46, 0.2);
@@ -734,14 +700,12 @@ body {
 /* 2. Center-aligned Wrapper Container */
 .result-middle-container {
     flex: 1;
-    /* Occupies the remaining center vertical space */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Center Polaroid and speech bubble vertically */
     align-items: center;
     width: 100%;
-    gap: 15px;
+    gap: clamp(10px, 2dvh, 25px);
     /* Spacing between polaroid and bubble */
     margin: 10px 0;
 }
@@ -749,12 +713,10 @@ body {
 /* Polaroid Card Style */
 .polaroid-card {
     width: 70%;
-    /* Reduced width from 76% to make it slightly smaller */
+    max-width: clamp(200px, 30dvh, 260px);
     background-color: #ffffff;
     border: none;
-    /* Removed outline */
     padding: 12px 12px 18px 12px;
-    /* Slightly reduced padding */
     box-shadow: 0 10px 20px rgba(92, 61, 46, 0.15);
     display: flex;
     flex-direction: column;
@@ -814,21 +776,18 @@ body {
 
 /* Reason Box below Polaroid */
 .reason-bubble-box {
-    width: 100%;
+    width: 90%;
     max-width: 320px;
-    /* Constrain max width for desktop ratio styling */
-    height: 135px;
-    /* Proportional height matching 2.37 aspect ratio */
+    height: auto;
+    min-height: 135px;
     background-image: url('결론_말풍선.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 37px 24px 18px 24px;
-    /* Adjusted padding to center text vertically in bubble image which has a top tail */
-    margin: 0;
-    /* Managed by .result-middle-container */
+    padding: 30px 24px 20px 24px;
+    margin: 0 auto;
 }
 
 .reason-text {
@@ -847,9 +806,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: auto;
-    /* Pushed to bottom of the page container */
-    margin-bottom: 80px;
-    /* Increased bottom margin to raise the button higher */
+    margin-bottom: 25px;
 }
 
 .restart-btn {
@@ -889,25 +846,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex: 1;
     width: 100%;
     position: relative;
-    /* Needed for absolute logo positioning */
     padding: 10px 0 0 0;
 }
 
 .fail-character-section {
     position: relative;
     width: 100%;
-    height: 300px;
-    /* Taller section pushes character (flex-end) further down from bubble */
+    height: 28dvh;
+    min-height: 180px;
+    max-height: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 170px;
-    /* Section top margin (+20px) */
+    margin-top: clamp(20px, 6dvh, 80px);
     margin-bottom: 20px;
 }
 
@@ -919,17 +875,17 @@ body {
 
 .fail-bubble-box {
     position: absolute;
-    top: 5px;
+    bottom: 50px;
     width: 185px;
-    height: 120px;
+    height: auto;
+    min-height: 100px;
     background-image: url('로딩_말풍선.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 15px 30px 15px;
-    /* 위 패딩 늘려 텍스트를 살짝 아래로 */
+    padding: 12px 15px 25px 15px;
     z-index: 1;
 }
 
@@ -944,20 +900,16 @@ body {
 }
 
 #btn-restart-fail {
-    margin-top: 150px;
-    /* Fixed value to position button closer to character */
-    margin-bottom: 50px;
+    margin: 15px auto 10px auto;
 }
 
 .fail-logo-container {
-    position: absolute;
-    /* Detach from button flow */
-    bottom: 2px;
-    /* Anchored very close to the bottom edge */
-    left: 0;
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: auto;
+    padding-bottom: 20px;
 }
 
 .fail-logo {
