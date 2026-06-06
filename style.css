@@ -53,6 +53,7 @@ body {
     color: #5C3D2E;
     /* Warm dark brown */
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -68,6 +69,7 @@ body {
     max-width: 100%;
     /* Fill the horizontal viewport completely! */
     height: 100vh;
+    height: 100dvh;
     /* Fits phone ratio vertically dynamically */
     background: linear-gradient(180deg, #FFD9D7 5%, #FFAABE 35%, #FFAABE 100%);
     position: relative;
@@ -257,6 +259,9 @@ body {
     /* Increased padding to prevent overlap with top/bottom lace */
     flex-direction: column;
     z-index: 3;
+    overflow-y: auto; /* 내용이 화면 높이를 넘어가면 세로 스크롤 활성화 */
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 지원 */
 }
 
 .screen.active {
