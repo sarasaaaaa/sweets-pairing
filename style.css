@@ -341,7 +341,7 @@ body {
 .intro-character {
     position: absolute;
     bottom: 0;
-    left: 110px;
+    left: 60px; /* 가로 중앙 정렬 (320px 컨테이너에서 200px 캐릭터이므로 좌측 60px) */
     width: 200px;
     height: auto;
     z-index: 3;
@@ -349,9 +349,9 @@ body {
 
 .intro-bubble-box {
     position: absolute;
-    bottom: 85px;
-    left: 10px;
-    width: 135px;
+    bottom: 120px; /* 캐릭터 머리 위로 올림 */
+    left: 20px; /* 세번째 스크린샷처럼 캐릭터 위에서 약간 왼쪽으로 정렬 */
+    width: 140px; /* 가로폭 약간 조정 */
     height: auto;
     min-height: 105px;
     background-image: url('시작_말풍선.png');
@@ -360,7 +360,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px 20px 22px 10px; /* 우측 패딩을 늘려 캐릭터 머리와 겹쳐도 텍스트가 침범당하지 않게 방어 */
+    padding: 12px 16px 22px 12px; /* 머리 위에 위치하므로 패딩 균형 조절 */
     z-index: 1;
 }
 
@@ -435,9 +435,9 @@ body {
 .question-character-section {
     position: relative;
     width: 100%;
-    height: 22dvh;
-    min-height: 140px;
-    max-height: 190px;
+    height: 25dvh;
+    min-height: 160px;
+    max-height: 210px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -464,9 +464,9 @@ body {
 
 .question-bubble-box {
     position: absolute;
-    bottom: 45px;
-    left: 15px; /* 왼쪽으로 10px 이동하여 캐릭터와 물리적 거리 확보 */
-    width: 180px; /* 패딩 공간 확보를 위해 너비 약간 확장 */
+    bottom: 105px; /* 캐릭터 머리 위로 올림 */
+    left: 25px; /* 세번째 스크린샷처럼 캐릭터 위에서 약간 왼쪽으로 정렬 */
+    width: 170px;
     height: auto;
     min-height: 98px;
     background-image: url('고르기_말풍선.png');
@@ -475,7 +475,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 24px 20px 15px; /* 우측 패딩을 24px로 늘려 캐릭터 머리에 겹치는 부분에 텍스트가 안 가도록 조절 */
+    padding: 10px 15px 20px 15px; /* 머리 위에 위치하므로 패딩 균형 조절 */
     z-index: 1;
 }
 
@@ -883,7 +883,7 @@ body {
 
 .fail-bubble-box {
     position: absolute;
-    bottom: 50px;
+    bottom: 110px; /* 캐릭터 머리 위로 올림 */
     width: 185px;
     height: auto;
     min-height: 100px;
