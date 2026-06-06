@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Harmony - 디저트 & 커피 페어링 추천</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- App Container designed like a mobile view -->
+    <div class="app-container">
+        <!-- Global background sparkles/dots -->
+        <div class="bg-sparkles">
+            <span class="sparkle s1"></span>
+            <span class="sparkle s2"></span>
+            <span class="sparkle s3"></span>
+            <span class="sparkle s4"></span>
+            <span class="sparkle s5"></span>
+            <span class="sparkle s6"></span>
+            <span class="sparkle s7"></span>
+            <span class="sparkle s8"></span>
+            <span class="sparkle s9"></span>
+            <span class="sparkle s10"></span>
+            <span class="sparkle s11"></span>
+            <span class="sparkle s12"></span>
+            <span class="sparkle s13"></span>
+            <span class="sparkle s14"></span>
+            <span class="sparkle s15"></span>
+        </div>
+        
+        <!-- ================= INTRO SCREEN ================= -->
+        <section id="screen-intro" class="screen active">
+            <div class="lace-decoration"></div>
+            
+            <div class="intro-content">
+                <div class="logo-container">
+                    <img src="로고.png" alt="Sweets Pairing" class="brand-logo">
+                </div>
+                
+                <div class="intro-character-section">
+                    <div class="intro-bubble-box">
+                        <span class="intro-bubble-text">취향에 맞는<br>스위츠 페어링을<br>찾아줄게!</span>
+                    </div>
+                    <img src="시작_일러스트.png" alt="시작 일러스트" class="intro-character">
+                </div>
+                
+                <button id="btn-start" class="pill-btn primary start-btn">스위츠 고르기</button>
+            </div>
+        </section>
+
+        <!-- ================= QUESTION SCREEN ================= -->
+        <section id="screen-question" class="screen">
+            <div class="lace-decoration"></div>
+            
+            <div class="question-character-section">
+                <div class="question-character-inner">
+                    <div class="question-bubble-box">
+                        <span class="question-bubble-text">어떤 스위츠가<br>끌리는지 골라줄래?</span>
+                    </div>
+                    <img src="고르기_일러스트.png" alt="고르기 일러스트" class="question-character">
+                </div>
+            </div>
+            
+            <div class="questions-wrapper">
+                <!-- Style (Origin) -->
+                <div class="step-group">
+                    <span class="step-label">Style</span>
+                    <div class="options-container" data-category="origin">
+                        <button class="option-btn" data-value="동양식">동양식</button>
+                        <button class="option-btn" data-value="서양식">서양식</button>
+                    </div>
+                </div>
+
+                <!-- Texture -->
+                <div class="step-group">
+                    <span class="step-label">Texture</span>
+                    <div class="options-container" data-category="texture">
+                        <button class="option-btn" data-value="바삭한">바삭한</button>
+                        <button class="option-btn" data-value="쫀득한">쫀득한</button>
+                        <button class="option-btn" data-value="부드러운">부드러운</button>
+                    </div>
+                </div>
+
+                <!-- Ingredient -->
+                <div class="step-group">
+                    <span class="step-label">Ingredient</span>
+                    <div class="options-container" data-category="ingredient">
+                        <button class="option-btn" data-value="크림">크림</button>
+                        <button class="option-btn" data-value="곡물">곡물</button>
+                        <button class="option-btn" data-value="과일">과일</button>
+                        <button class="option-btn" data-value="견과류">견과류</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-container">
+                <button id="btn-prev" class="nav-text-btn">&lt; 이전으로</button>
+                <button id="btn-next" class="nav-text-btn" disabled>다음으로 &gt;</button>
+            </div>
+            <div class="screen-bottom-logo-container">
+                <img src="로고.png" alt="Sweets Pairing" class="screen-bottom-logo">
+            </div>
+        </section>
+
+        <!-- ================= LOADING SCREEN ================= -->
+        <section id="screen-loading" class="screen">
+            <div class="lace-decoration"></div>
+            
+            <div class="loading-content">
+                <div class="loading-bubble-container">
+                    <img src="로딩중_말풍선.png" alt="로딩중 말풍선" class="loading-bubble-img">
+                </div>
+                <div class="loading-character-container">
+                    <img src="로딩중_일러스트.png" alt="로딩중" class="loading-character">
+                </div>
+            </div>
+            <div class="screen-bottom-logo-container">
+                <img src="로고.png" alt="Sweets Pairing" class="screen-bottom-logo">
+            </div>
+        </section>
+
+        <!-- ================= RESULT SCREEN ================= -->
+        <section id="screen-result" class="screen">
+            <div class="lace-decoration"></div>
+            
+            <div class="result-tags-wrapper">
+                <div id="result-tags" class="tags-container">
+                    <!-- Dynamic hashtags injected here -->
+                </div>
+            </div>
+
+            <!-- 가운데 기준 정렬을 위한 컨테이너 -->
+            <div class="result-middle-container">
+                <!-- Polaroid Card -->
+                <div class="polaroid-card">
+                    <div class="polaroid-photo-area">
+                        <img id="result-dessert-img" class="polaroid-dessert-photo" src="" alt="디저트 사진">
+                        <img id="result-character-img" class="result-character-img" src="" alt="pairing illustration">
+                    </div>
+                    <div class="polaroid-caption">
+                        <span id="result-action-text">진한 초콜릿 퐁당을 먹으며<br><strong>에스프레소를 홀짝대기</strong></span>
+                    </div>
+                </div>
+
+                <!-- Recommendation Reason -->
+                <div class="reason-bubble-box">
+                    <p id="result-reason-text" class="reason-text"></p>
+                </div>
+            </div>
+
+            <div class="result-footer">
+                <button id="btn-restart-success" class="pill-btn restart-btn">처음으로</button>
+            </div>
+        </section>
+
+        <!-- ================= FAIL SCREEN ================= -->
+        <section id="screen-fail" class="screen">
+            <div class="lace-decoration"></div>
+            
+            <div class="fail-container">
+                <div class="fail-character-section">
+                    <div class="fail-bubble-box">
+                        <span class="fail-bubble-text">이런 스위츠는<br>아직 배우지 못했어..</span>
+                    </div>
+                    <img src="로딩_일러스트.png" alt="실패 캐릭터" class="fail-character">
+                </div>
+                
+                <button id="btn-restart-fail" class="pill-btn restart-btn">다시 고르기</button>
+                
+                <div class="fail-logo-container">
+                    <img src="로고.png" alt="Sweets Pairing" class="fail-logo">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Hidden emojis for script references if needed, keeping them out of display -->
+    <div style="display:none;">
+        <span id="result-emoji"></span>
+        <span id="result-coffee-emoji"></span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
