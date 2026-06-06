@@ -332,7 +332,16 @@ body {
     margin-bottom: 2dvh;
 }
 
+.intro-character-inner {
+    position: relative;
+    width: 320px;
+    height: 100%;
+}
+
 .intro-character {
+    position: absolute;
+    bottom: 0;
+    left: 110px;
     width: 200px;
     height: auto;
     z-index: 3;
@@ -340,10 +349,9 @@ body {
 
 .intro-bubble-box {
     position: absolute;
-    top: -8px;
-    left: 51%;
-    transform: translateX(-130px);
-    width: 125px;
+    bottom: 85px;
+    left: 10px;
+    width: 135px;
     height: auto;
     min-height: 105px;
     background-image: url('시작_말풍선.png');
@@ -352,7 +360,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px 12px 22px 10px;
+    padding: 12px 20px 22px 10px; /* 우측 패딩을 늘려 캐릭터 머리와 겹쳐도 텍스트가 침범당하지 않게 방어 */
     z-index: 1;
 }
 
@@ -391,8 +399,8 @@ body {
 }
 
 .brand-logo {
-    width: 95%;
-    max-width: 390px;
+    width: 80%; /* 가로폭을 살짝 줄여서 세로로 높은 기기에서도 말풍선과 겹치지 않고 조화를 이루게 함 */
+    max-width: 320px;
     height: auto;
     object-fit: contain;
 }
@@ -457,8 +465,8 @@ body {
 .question-bubble-box {
     position: absolute;
     bottom: 45px;
-    left: 25px;
-    width: 170px;
+    left: 15px; /* 왼쪽으로 10px 이동하여 캐릭터와 물리적 거리 확보 */
+    width: 180px; /* 패딩 공간 확보를 위해 너비 약간 확장 */
     height: auto;
     min-height: 98px;
     background-image: url('고르기_말풍선.png');
@@ -467,7 +475,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 10px 20px 15px;
+    padding: 10px 24px 20px 15px; /* 우측 패딩을 24px로 늘려 캐릭터 머리에 겹치는 부분에 텍스트가 안 가도록 조절 */
     z-index: 1;
 }
 
