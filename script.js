@@ -429,9 +429,8 @@ function displayResult(dessert) {
     // Build Action Text
     const actionTextElement = document.getElementById('result-action-text');
     if (dessert.pairingId === 4) {
-        // 부드러운 티라미수로 커피가 들어간 스위츠를 먹기
-        const particle = getParticle(dessert.descriptiveName, 'ro');
-        actionTextElement.innerHTML = `<strong>${dessert.descriptiveName}</strong>${particle}<br>${pairing.actionText}`;
+        // 커피가 들어간 부드러운 티라미수 먹기
+        actionTextElement.innerHTML = `커피가 들어간<br><strong>${dessert.descriptiveName}</strong> 먹기`;
     } else if (pairing.actionText.includes('먹')) {
         // "먹"이 들어간 페어링이면 "먹으며"를 제외하여 중복 방지 (예: 고소한 크루아상을 아메리카노와 번갈아 먹기)
         const particle = getParticle(dessert.descriptiveName, 'eulleul');
