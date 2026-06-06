@@ -463,7 +463,7 @@ btnStart.addEventListener('click', () => {
         btnStart.classList.remove('tilt-active');
         resetSelections();
         showScreen('question');
-    }, 450);
+    }, 350);
 });
 
 // Option Selection Buttons

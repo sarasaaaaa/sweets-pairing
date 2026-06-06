@@ -319,7 +319,7 @@ body {
 
 /* Tilt animation when clicking start button */
 .tilt-active {
-    animation: tiltClick 0.45s ease-in-out;
+    animation: tiltClick 0.35s ease-in-out;
 }
 
 @keyframes tiltClick {
@@ -327,13 +327,13 @@ body {
         transform: rotate(0deg) scale(1);
     }
     20% {
-        transform: rotate(-8deg) scale(0.92);
+        transform: rotate(-3deg) scale(0.96);
     }
     50% {
-        transform: rotate(6deg) scale(0.95);
+        transform: rotate(2deg) scale(0.98);
     }
     75% {
-        transform: rotate(-3deg) scale(0.98);
+        transform: rotate(-1deg) scale(0.99);
     }
     100% {
         transform: rotate(0deg) scale(1);
